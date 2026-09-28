@@ -1,0 +1,107 @@
+/* Resetare și aplicarea modelului cutiei pentru a include padding și border în lățimea totală */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+/* 1. Antetul folosește Flexbox cu numele în stânga și meniul în dreapta, aliniate pe verticală */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: #1f3b5d;
+    color: #ffffff;
+}
+
+.site-header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* 3. Destinațiile sunt carduri așezate cu Grid, adaptabile la dimensiunea ecranului */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #d0d7e2;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Pseudo-clasa pentru efectul la trecerea mouse-ului */
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Evidențierea destinației speciale */
+.card.featured {
+    border: 2px solid #5b3fd9;
+    background-color: #eef4fa;
+}
+
+/* 2. Formularul așezat pe verticală, câmpurile ocupă toată lățimea */
+.plan-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+}
+
+.plan-form input, 
+.plan-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Efect pentru activarea câmpurilor din formular */
+input:focus, select:focus {
+    outline: 2px solid #5b3fd9;
+}
+
+.plan-form button {
+    padding: 10px;
+    background-color: #5b3fd9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.plan-form button:hover {
+    background-color: #4a33b0;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e1e1e1;
+}
